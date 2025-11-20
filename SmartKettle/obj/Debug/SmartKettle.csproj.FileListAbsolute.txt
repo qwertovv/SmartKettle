@@ -1,0 +1,5 @@
+C:\Users\qwertovv\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle.csproj.AssemblyReference.cache
+C:\Users\qwertovv\Source\Repos\SmartKettle\SmartKettle\obj\Debug\App.g.cs
+C:\Users\qwertovv\Source\Repos\SmartKettle\SmartKettle\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\qwertovv\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle_MarkupCompile.cache
+C:\Users\qwertovv\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle_MarkupCompile.lref

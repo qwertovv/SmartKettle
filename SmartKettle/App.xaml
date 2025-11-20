@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:SmartKettle"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <local:BoolToColorConverter x:Key="BoolToColorConverter"/>
     </Application.Resources>
 </Application>
