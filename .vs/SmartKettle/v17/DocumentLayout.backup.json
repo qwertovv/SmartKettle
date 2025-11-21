@@ -1,0 +1,198 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\delov\\source\\repos\\SmartKettle\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|c:\\users\\delov\\source\\repos\\smartkettle\\smartkettle\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|C:\\Users\\delov\\source\\repos\\SmartKettle\\smartkettle\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|c:\\users\\delov\\source\\repos\\smartkettle\\smartkettle\\helpwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\helpwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|c:\\users\\delov\\source\\repos\\smartkettle\\smartkettle\\helpwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\helpwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|C:\\Users\\delov\\source\\repos\\SmartKettle\\smartkettle\\viewmodels\\wpviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\viewmodels\\wpviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|C:\\Users\\delov\\source\\repos\\SmartKettle\\smartkettle\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|C:\\Users\\delov\\source\\repos\\SmartKettle\\smartkettle\\viewmodels\\booleanlogicviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\viewmodels\\booleanlogicviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|C:\\Users\\delov\\source\\repos\\SmartKettle\\smartkettle\\models\\kettlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\models\\kettlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|C:\\Users\\delov\\source\\repos\\SmartKettle\\smartkettle\\viewmodels\\invariantviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\viewmodels\\invariantviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|C:\\Users\\delov\\source\\repos\\SmartKettle\\smartkettle\\converters\\booltocolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\converters\\booltocolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|C:\\Users\\delov\\source\\repos\\SmartKettle\\smartkettle\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5520BCA5-F4B5-4897-A168-4D3FC89D23CF}|SmartKettle\\SmartKettle.csproj|solutionrelative:smartkettle\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HelpWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\HelpWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SmartKettle\\HelpWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\HelpWindow.xaml.cs*",
+              "RelativeToolTip": "SmartKettle\\HelpWindow.xaml.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T12:16:30.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HelpWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\HelpWindow.xaml",
+              "RelativeDocumentMoniker": "SmartKettle\\HelpWindow.xaml",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\HelpWindow.xaml*",
+              "RelativeToolTip": "SmartKettle\\HelpWindow.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-21T12:16:05.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "SmartKettle\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "SmartKettle\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAxwBUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T11:59:31.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InvariantViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\ViewModels\\InvariantViewModel.cs",
+              "RelativeDocumentMoniker": "SmartKettle\\ViewModels\\InvariantViewModel.cs",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\ViewModels\\InvariantViewModel.cs",
+              "RelativeToolTip": "SmartKettle\\ViewModels\\InvariantViewModel.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAQwG4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T11:59:08.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KettleState.cs",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\Models\\KettleState.cs",
+              "RelativeDocumentMoniker": "SmartKettle\\Models\\KettleState.cs",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\Models\\KettleState.cs",
+              "RelativeToolTip": "SmartKettle\\Models\\KettleState.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAQwF4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T11:59:01.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "SmartKettle\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\MainWindow.xaml*",
+              "RelativeToolTip": "SmartKettle\\MainWindow.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-21T10:50:15.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SmartKettle\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "SmartKettle\\MainWindow.xaml.cs*",
+              "ViewState": "AgIAAK0AAAAAAAAAAAA5wMIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T11:38:08.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BooleanLogicViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\ViewModels\\BooleanLogicViewModel.cs",
+              "RelativeDocumentMoniker": "SmartKettle\\ViewModels\\BooleanLogicViewModel.cs",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\ViewModels\\BooleanLogicViewModel.cs",
+              "RelativeToolTip": "SmartKettle\\ViewModels\\BooleanLogicViewModel.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAQwF8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T12:01:03.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WPViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\ViewModels\\WPViewModel.cs",
+              "RelativeDocumentMoniker": "SmartKettle\\ViewModels\\WPViewModel.cs",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\ViewModels\\WPViewModel.cs",
+              "RelativeToolTip": "SmartKettle\\ViewModels\\WPViewModel.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAQwJ8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T12:05:25.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BoolToColorConverter.cs",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\Converters\\BoolToColorConverter.cs",
+              "RelativeDocumentMoniker": "SmartKettle\\Converters\\BoolToColorConverter.cs",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\Converters\\BoolToColorConverter.cs",
+              "RelativeToolTip": "SmartKettle\\Converters\\BoolToColorConverter.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T10:50:00.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\App.xaml",
+              "RelativeDocumentMoniker": "SmartKettle\\App.xaml",
+              "ToolTip": "C:\\Users\\delov\\source\\repos\\SmartKettle\\SmartKettle\\App.xaml",
+              "RelativeToolTip": "SmartKettle\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-21T11:38:18.268Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

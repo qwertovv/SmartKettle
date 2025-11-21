@@ -7,48 +7,49 @@ namespace SmartKettle.ViewModels
 {
     public class BooleanLogicViewModel : INotifyPropertyChanged
     {
-        private KettleState state;
-        private string booleanExpression;
-        private string truthTable;
-        private string dnf;
-        private string knf;
-        private string comparisonResult;
+        private string _booleanExpression;
+        private string _truthTable;
+        private string _dnf;
+        private string _knf;
+        private string _comparisonResult;
+
+        public ObservableCollection<string> LogicPresets { get; set; }
 
         public string BooleanExpression
         {
-            get => booleanExpression;
-            set { booleanExpression = value; OnPropertyChanged(); }
+            get => _booleanExpression;
+            set { _booleanExpression = value; OnPropertyChanged(); }
         }
 
         public string TruthTable
         {
-            get => truthTable;
-            set { truthTable = value; OnPropertyChanged(); }
+            get => _truthTable;
+            set { _truthTable = value; OnPropertyChanged(); }
         }
 
         public string DNF
         {
-            get => dnf;
-            set { dnf = value; OnPropertyChanged(); }
+            get => _dnf;
+            set { _dnf = value; OnPropertyChanged(); }
         }
 
         public string KNF
         {
-            get => knf;
-            set { knf = value; OnPropertyChanged(); }
+            get => _knf;
+            set { _knf = value; OnPropertyChanged(); }
         }
 
         public string ComparisonResult
         {
-            get => comparisonResult;
-            set { comparisonResult = value; OnPropertyChanged(); }
+            get => _comparisonResult;
+            set { _comparisonResult = value; OnPropertyChanged(); }
         }
 
-        public ObservableCollection<string> LogicPresets { get; set; }
+        private KettleState _state;
 
         public BooleanLogicViewModel(KettleState kettleState)
         {
-            state = kettleState;
+            _state = kettleState;
             InitializeLogic();
         }
 
@@ -61,27 +62,24 @@ namespace SmartKettle.ViewModels
                 "Управление питанием"
             };
 
-            BooleanExpression = "(WaterLevel > 0.5) & PowerOn & ((ScheduleActive & InSchedule) | ManualOverride) & !Overheat & !SafetyLock";
+            BooleanExpression = "(WaterLevel > 0.5) & PowerOn & !Overheat & !SafetyLock";
         }
 
         public void CalculateTruthTable()
         {
-            // Упрощенная генерация таблицы истинности
-            TruthTable = "WaterLevel | PowerOn | Schedule | Manual | Overheat | SafetyLock | ShouldHeat\n" +
-                        "---------|--------|---------|-------|---------|-----------|----------\n" +
-                        "   0     |   1    |    1    |   0   |    0    |     0     |     0\n" +
-                        "   1     |   1    |    1    |   0   |    0    |     0     |     1\n" +
-                        "   1     |   1    |    0    |   1   |    0    |     0     |     1\n" +
-                        "   1     |   1    |    1    |   0   |    1    |     0     |     0";
+            TruthTable = "WaterLevel | PowerOn | Overheat | SafetyLock | ShouldHeat\n" +
+                        "---------|--------|---------|-----------|----------\n" +
+                        "   0     |   1    |    0    |     0     |     0\n" +
+                        "   1     |   1    |    0    |     0     |     1\n" +
+                        "   1     |   1    |    1    |     0     |     0\n" +
+                        "   1     |   1    |    0    |     1     |     0\n" +
+                        "   1     |   0    |    0    |     0     |     0";
         }
 
         public void GenerateDNFKNF()
         {
-            DNF = "(WaterLevel ∧ PowerOn ∧ ScheduleActive ∧ InSchedule ∧ ¬Overheat ∧ ¬SafetyLock) ∨\n" +
-                  "(WaterLevel ∧ PowerOn ∧ ManualOverride ∧ ¬Overheat ∧ ¬SafetyLock)";
-
-            KNF = "(WaterLevel ∨ ¬PowerOn ∨ Overheat ∨ SafetyLock) ∧\n" +
-                  "(PowerOn ∨ ¬WaterLevel ∨ SafetyLock)";
+            DNF = "(WaterLevel ∧ PowerOn ∧ ¬Overheat ∧ ¬SafetyLock)";
+            KNF = "(WaterLevel ∨ ¬PowerOn ∨ Overheat ∨ SafetyLock)";
         }
 
         public void CheckEquivalence()

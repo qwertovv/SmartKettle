@@ -1,0 +1,60 @@
+﻿<Window x:Class="SmartKettle.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Справка - Умный Чайник" 
+        Height="500" Width="600"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Window.Resources>
+        <Style x:Key="HeaderStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0,10,0,5"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+        </Style>
+
+        <Style x:Key="TextStyle" TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="15">
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="Справка по приложению 'Умный Чайник'" 
+                          FontSize="16" FontWeight="Bold" 
+                          Margin="0,0,0,15" Foreground="#2C3E50"/>
+
+                <TextBlock Style="{StaticResource HeaderStyle}" Text="1. Вкладка 'Статус'"/>
+                <TextBlock Style="{StaticResource TextStyle}" 
+                          Text="- Просмотр текущего состояния чайника: температуры, уровня воды, статуса&#x0a;- Управление питанием и нагревом с помощью переключателей&#x0a;- Кнопки 'Начать нагрев' и 'Остановить' для управления процессом нагрева"/>
+
+                <TextBlock Style="{StaticResource HeaderStyle}" Text="2. Вкладка 'Контракты' (ЛР1)"/>
+                <TextBlock Style="{StaticResource TextStyle}" 
+                          Text="- Выберите операцию из списка слева&#x0a;- Проверьте предусловия перед выполнением&#x0a;- Выполните операцию и убедитесь в выполнении постусловий&#x0a;- Просмотрите полный контракт операции"/>
+
+                <TextBlock Style="{StaticResource HeaderStyle}" Text="3. Вкладка 'WP-калькулятор' (ЛР2)"/>
+                <TextBlock Style="{StaticResource TextStyle}" 
+                          Text="- Выберите пресет из выпадающего списка&#x0a;- Исходный код и постусловие заполнятся автоматически&#x0a;- Нажмите 'Рассчитать WP' для вычисления weakest precondition&#x0a;- Просмотрите пошаговый расчет, итоговое WP и триаду Хоара"/>
+
+                <TextBlock Style="{StaticResource HeaderStyle}" Text="4. Вкладка 'Инварианты' (ЛР3)"/>
+                <TextBlock Style="{StaticResource TextStyle}" 
+                          Text="- Просмотрите код цикла поддержания температуры&#x0a;- Нажимайте 'Шаг цикла' для пошагового выполнения&#x0a;- Наблюдайте за изменением инварианта и варианта-функции&#x0a;- Проверяйте сохранение инварианта после каждого шага"/>
+
+                <TextBlock Style="{StaticResource HeaderStyle}" Text="5. Вкладка 'Булевы функции' (ЛР4)"/>
+                <TextBlock Style="{StaticResource TextStyle}" 
+                          Text="- Работайте с булевыми выражениями логики чайника&#x0a;- Строите таблицы истинности&#x0a;- Генерируйте ДНФ и КНФ формы&#x0a;- Проверяйте эквивалентность логических выражений"/>
+
+                <TextBlock Style="{StaticResource HeaderStyle}" Text="Общие рекомендации"/>
+                <TextBlock Style="{StaticResource TextStyle}" 
+                          Text="- Для нагрева воды: сначала включите нагрев на вкладке 'Статус', затем выполняйте шаги цикла на вкладке 'Инварианты'&#x0a;- Все операции проверяют предусловия перед выполнением&#x0a;- Результаты расчетов WP и булевых функций сохраняются до смены пресета"/>
+
+                <TextBlock Style="{StaticResource HeaderStyle}" Text="Интеграция лабораторных работ"/>
+                <TextBlock Style="{StaticResource TextStyle}" 
+                          Text="Приложение демонстрирует интеграцию 4 лабораторных работ:&#x0a;• ЛР1: Контракты операций&#x0a;• ЛР2: WP-калькулятор для weakest precondition&#x0a;• ЛР3: Инварианты и вариант-функции циклов&#x0a;• ЛР4: Булевы функции для логики управления"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
