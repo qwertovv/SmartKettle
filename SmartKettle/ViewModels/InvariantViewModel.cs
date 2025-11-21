@@ -6,53 +6,54 @@ namespace SmartKettle.ViewModels
 {
     public class InvariantViewModel : INotifyPropertyChanged
     {
-        private KettleState state;
-        private string invariant;
-        private string variantFunction;
-        private bool invariantBefore;
-        private bool invariantAfter;
-        private int variantValue;
-        private string wpFormula;
+        private string _invariant;
+        private string _variantFunction;
+        private bool _invariantBefore;
+        private bool _invariantAfter;
+        private int _variantValue;
+        private string _wpFormula;
 
         public string Invariant
         {
-            get => invariant;
-            set { invariant = value; OnPropertyChanged(); }
+            get => _invariant;
+            set { _invariant = value; OnPropertyChanged(); }
         }
 
         public string VariantFunction
         {
-            get => variantFunction;
-            set { variantFunction = value; OnPropertyChanged(); }
+            get => _variantFunction;
+            set { _variantFunction = value; OnPropertyChanged(); }
         }
 
         public bool InvariantBefore
         {
-            get => invariantBefore;
-            set { invariantBefore = value; OnPropertyChanged(); }
+            get => _invariantBefore;
+            set { _invariantBefore = value; OnPropertyChanged(); }
         }
 
         public bool InvariantAfter
         {
-            get => invariantAfter;
-            set { invariantAfter = value; OnPropertyChanged(); }
+            get => _invariantAfter;
+            set { _invariantAfter = value; OnPropertyChanged(); }
         }
 
         public int VariantValue
         {
-            get => variantValue;
-            set { variantValue = value; OnPropertyChanged(); }
+            get => _variantValue;
+            set { _variantValue = value; OnPropertyChanged(); }
         }
 
         public string WPFormula
         {
-            get => wpFormula;
-            set { wpFormula = value; OnPropertyChanged(); }
+            get => _wpFormula;
+            set { _wpFormula = value; OnPropertyChanged(); }
         }
+
+        private KettleState _state;
 
         public InvariantViewModel(KettleState kettleState)
         {
-            state = kettleState;
+            _state = kettleState;
             InitializeInvariant();
         }
 
@@ -60,21 +61,44 @@ namespace SmartKettle.ViewModels
         {
             Invariant = "temperature ∈ [initialTemp, 100] ∧ heaterPower ∈ [0, 100]";
             VariantFunction = "t = max(0, targetTemperature - currentTemperature)";
-            VariantValue = (int)(state.TargetTemperature - state.Temperature);
+            UpdateVariantValue();
+        }
+
+        private void UpdateVariantValue()
+        {
+            VariantValue = (int)(_state.TargetTemperature - _state.Temperature);
         }
 
         public void ExecuteStep()
         {
-            // Симуляция шага цикла поддержания температуры
-            if (state.IsHeating && state.Temperature < state.TargetTemperature)
+            System.Diagnostics.Debug.WriteLine($"ExecuteStep: IsHeating={_state.IsHeating}, Temp={_state.Temperature}, Target={_state.TargetTemperature}");
+
+            if (_state.IsHeating && _state.Temperature < _state.TargetTemperature)
             {
-                state.Temperature += 5;
-                VariantValue = (int)(state.TargetTemperature - state.Temperature);
+                // Увеличиваем температуру
+                _state.Temperature += 10;
 
+                // Обновляем вариант-функцию
+                UpdateVariantValue();
+
+                // Проверяем инварианты
                 InvariantBefore = true;
-                InvariantAfter = state.Temperature >= 0 && state.Temperature <= 100;
+                InvariantAfter = _state.Temperature >= 0 && _state.Temperature <= 100;
+                WPFormula = $"(Inv ∧ temperature < targetTemperature) ⇒ wp(heaterPower := 50, Inv)";
 
-                WPFormula = "(Inv ∧ temperature < targetTemperature) ⇒ wp(heaterPower := 50, Inv)";
+                System.Diagnostics.Debug.WriteLine($"Temperature increased to: {_state.Temperature}");
+
+                // Если достигли целевой температуры, выключаем нагрев
+                if (_state.Temperature >= _state.TargetTemperature)
+                {
+                    _state.IsHeating = false;
+                    _state.Status = "Готов";
+                    System.Diagnostics.Debug.WriteLine("Target temperature reached, heating stopped");
+                }
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine($"Cannot execute step: IsHeating={_state.IsHeating}, Temp={_state.Temperature}, Target={_state.TargetTemperature}");
             }
         }
 
