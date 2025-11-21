@@ -1,27 +1,15 @@
 ﻿<Window x:Class="SmartKettle.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Умный Чайник - Курсовая работа" 
-        Height="700" Width="1000"
-        WindowStartupLocation="CenterScreen">
-
-    <Window.Resources>
-        <Style x:Key="IndicatorStyle" TargetType="Border">
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="BorderBrush" Value="Gray"/>
-            <Setter Property="CornerRadius" Value="3"/>
-            <Setter Property="Padding" Value="5"/>
-            <Setter Property="Margin" Value="2"/>
-        </Style>
-    </Window.Resources>
+        Title="Умный Чайник" Height="700" Width="1000">
 
     <Grid>
         <TabControl>
-            <!-- Вкладка 1: Статус и управление -->
-            <TabItem Header="Статус чайника">
-                <ScrollViewer>
-                    <StackPanel Margin="10">
-                        <GroupBox Header="Текущее состояние" Margin="0,0,0,10">
+            <!-- Вкладка 1: Статус чайника -->
+            <TabItem Header="Статус">
+                <StackPanel Margin="10">
+                    <GroupBox Header="Текущее состояние">
+                        <StackPanel Margin="10">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -30,76 +18,58 @@
 
                                 <StackPanel Grid.Column="0">
                                     <TextBlock Text="{Binding KettleState.Status}" FontSize="16" FontWeight="Bold" Margin="5"/>
-                                    <ProgressBar Value="{Binding KettleState.Temperature}" 
-                                               Maximum="100" Height="20" Margin="5"/>
-                                    <TextBlock Text="{Binding KettleState.Temperature, StringFormat='Температура: {0}°C'}" 
-                                               Margin="5"/>
-                                    <TextBlock Text="{Binding KettleState.WaterLevel, StringFormat='Уровень воды: {0} л'}" 
-                                               Margin="5"/>
+                                    <ProgressBar Value="{Binding KettleState.Temperature}" Maximum="100" Height="20" Margin="5"/>
+                                    <TextBlock Text="{Binding KettleState.Temperature, StringFormat='Температура: {0}°C'}" Margin="5"/>
+                                    <TextBlock Text="{Binding KettleState.WaterLevel, StringFormat='Уровень воды: {0} л'}" Margin="5"/>
+                                    <TextBlock Text="{Binding KettleState.TargetTemperature, StringFormat='Целевая температура: {0}°C'}" Margin="5"/>
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="1">
                                     <CheckBox Content="Питание" IsChecked="{Binding KettleState.IsPowered}" Margin="5"/>
                                     <CheckBox Content="Нагрев" IsChecked="{Binding KettleState.IsHeating}" Margin="5"/>
-                                    <TextBlock Text="{Binding KettleState.TargetTemperature, StringFormat='Целевая темп.: {0}°C'}" 
-                                               Margin="5"/>
-                                    <Button Content="Начать нагрев" Margin="5" Height="30"/>
-                                    <Button Content="Остановить" Margin="5" Height="30"/>
+                                    <Button Content="Начать нагрев" Margin="5" Height="30" Click="StartHeating_Click"/>
+                                    <Button Content="Остановить" Margin="5" Height="30" Click="StopHeating_Click"/>
                                 </StackPanel>
                             </Grid>
-                        </GroupBox>
-                    </StackPanel>
-                </ScrollViewer>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
             </TabItem>
 
-            <!-- Вкладка 2: Контракты (ЛР1) -->
-            <TabItem Header="Контракты (ЛР1)">
+            <!-- Вкладка 2: Контракты -->
+            <TabItem Header="Контракты">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="200"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <ListBox Grid.Column="0" ItemsSource="{Binding ContractVM.Operations}"
-                           SelectedItem="{Binding ContractVM.SelectedOperation}"
-                           DisplayMemberPath="Name" Margin="5"/>
+                    <ListBox Grid.Column="0" ItemsSource="{Binding ContractVM.Operations}" 
+                            SelectedItem="{Binding ContractVM.SelectedOperation}" 
+                            DisplayMemberPath="Name" Margin="5"/>
 
                     <StackPanel Grid.Column="1" Margin="10">
                         <GroupBox Header="Контракт операции">
-                            <StackPanel>
-                                <TextBlock Text="{Binding ContractVM.SelectedOperation.Name}" 
-                                         FontSize="14" FontWeight="Bold" Margin="5"/>
+                            <StackPanel Margin="10">
+                                <TextBlock Text="{Binding ContractVM.SelectedOperation.Name}" FontSize="14" FontWeight="Bold" Margin="5"/>
 
-                                <Border Style="{StaticResource IndicatorStyle}" 
-                                      Background="{Binding ContractVM.PreConditionsMet, 
-                                      Converter={StaticResource BoolToColorConverter}}">
-                                    <TextBlock Text="Предусловие" Margin="5"/>
-                                </Border>
-                                <TextBlock Text="{Binding ContractVM.SelectedOperation.PreConditions}" 
-                                         Margin="5,0,5,10" TextWrapping="Wrap"/>
+                                <TextBlock Text="Предусловия:" FontWeight="Bold" Margin="5,10,5,0"/>
+                                <TextBlock Text="{Binding ContractVM.SelectedOperation.PreConditions}" Margin="5" TextWrapping="Wrap"/>
 
-                                <Border Style="{StaticResource IndicatorStyle}"
-                                      Background="{Binding ContractVM.PostConditionsMet, 
-                                      Converter={StaticResource BoolToColorConverter}}">
-                                    <TextBlock Text="Постусловие" Margin="5"/>
-                                </Border>
-                                <TextBlock Text="{Binding ContractVM.SelectedOperation.PostConditions}" 
-                                         Margin="5,0,5,10" TextWrapping="Wrap"/>
+                                <TextBlock Text="Постусловия:" FontWeight="Bold" Margin="5,10,5,0"/>
+                                <TextBlock Text="{Binding ContractVM.SelectedOperation.PostConditions}" Margin="5" TextWrapping="Wrap"/>
 
-                                <Button Content="Проверить предусловия" 
-                                      Command="{Binding ContractVM.CheckPreConditionsCommand}"
-                                      Margin="5" Height="30"/>
-                                <Button Content="Выполнить операцию" 
-                                      Command="{Binding ContractVM.ExecuteOperationCommand}"
-                                      Margin="5" Height="30"/>
+                                <Button Content="Проверить предусловия" Margin="5" Height="30" Click="CheckPreConditions_Click"/>
+                                <Button Content="Выполнить операцию" Margin="5" Height="30" Click="ExecuteOperation_Click"/>
+                                <Button Content="Показать контракт" Margin="5" Height="30" Click="ShowContract_Click"/>
                             </StackPanel>
                         </GroupBox>
                     </StackPanel>
                 </Grid>
             </TabItem>
 
-            <!-- Вкладка 3: WP-калькулятор (ЛР2) -->
-            <TabItem Header="WP-калькулятор (ЛР2)">
+            <!-- Вкладка 3: WP-калькулятор -->
+            <TabItem Header="WP-калькулятор">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -107,9 +77,8 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
-                        <ComboBox ItemsSource="{Binding WPVM.Presets}" Width="150" Margin="5"
-                                SelectionChanged="OnWPPresetChanged"/>
-                        <Button Content="Загрузить пресет" Margin="5"/>
+                        <ComboBox x:Name="WPPresetsComboBox" ItemsSource="{Binding WPVM.Presets}" 
+                                 Width="200" Margin="5" SelectionChanged="OnWPPresetChanged"/>
                     </StackPanel>
 
                     <Grid Grid.Row="1">
@@ -120,38 +89,45 @@
 
                         <StackPanel Grid.Column="0" Margin="5">
                             <GroupBox Header="Исходный код">
-                                <TextBox Text="{Binding WPVM.Code}" AcceptsReturn="True" 
-                                       Height="150" Margin="5"/>
+                                <StackPanel Margin="5">
+                                    <TextBox Text="{Binding WPVM.Code}" AcceptsReturn="True" Height="150"/>
+                                </StackPanel>
                             </GroupBox>
+
                             <GroupBox Header="Цель (Post-condition)">
-                                <TextBox Text="{Binding WPVM.PostCondition}" 
-                                       Height="60" Margin="5"/>
+                                <StackPanel Margin="5">
+                                    <TextBox Text="{Binding WPVM.PostCondition}" Height="60"/>
+                                </StackPanel>
                             </GroupBox>
-                            <Button Content="Рассчитать WP" 
-                                  Command="{Binding WPVM.CalculateWPCommand}"
-                                  Height="30" Margin="5"/>
+
+                            <Button Content="Рассчитать WP" Height="30" Margin="5" Click="CalculateWP_Click"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Margin="5">
                             <GroupBox Header="Пошаговый расчет">
-                                <TextBox Text="{Binding WPVM.StepByStepTrace}" 
-                                       IsReadOnly="True" Height="100" Margin="5"/>
+                                <StackPanel Margin="5">
+                                    <TextBox Text="{Binding WPVM.StepByStepTrace}" IsReadOnly="True" Height="100"/>
+                                </StackPanel>
                             </GroupBox>
+
                             <GroupBox Header="Итоговое WP">
-                                <TextBox Text="{Binding WPVM.FinalWP}" 
-                                       IsReadOnly="True" Height="60" Margin="5"/>
+                                <StackPanel Margin="5">
+                                    <TextBox Text="{Binding WPVM.FinalWP}" IsReadOnly="True" Height="60"/>
+                                </StackPanel>
                             </GroupBox>
+
                             <GroupBox Header="Триада Хоара">
-                                <TextBox Text="{Binding WPVM.HoareTriple}" 
-                                       IsReadOnly="True" Height="80" Margin="5"/>
+                                <StackPanel Margin="5">
+                                    <TextBox Text="{Binding WPVM.HoareTriple}" IsReadOnly="True" Height="80"/>
+                                </StackPanel>
                             </GroupBox>
                         </StackPanel>
                     </Grid>
                 </Grid>
             </TabItem>
 
-            <!-- Вкладка 4: Инварианты (ЛР3) -->
-            <TabItem Header="Инварианты (ЛР3)">
+            <!-- Вкладка 4: Инварианты -->
+            <TabItem Header="Инварианты">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -160,57 +136,38 @@
 
                     <StackPanel Grid.Column="0" Margin="10">
                         <GroupBox Header="Цикл поддержания температуры">
-                            <StackPanel>
-                                <TextBlock Text="while (isHeating &amp;&amp; !stopRequested)" 
-                                         FontFamily="Consolas" Margin="5"/>
-                                <TextBlock Text="{" FontFamily="Consolas" Margin="5,0"/>
-                                <TextBlock Text="    if (temp < target - 2) heater = 30;" 
-                                         FontFamily="Consolas" Margin="20,0"/>
-                                <TextBlock Text="    else if (temp > target + 2) heater = 0;" 
-                                         FontFamily="Consolas" Margin="20,0"/>
-                                <TextBlock Text="}" FontFamily="Consolas" Margin="5,0"/>
-
-                                <Button Content="Шаг цикла" Command="{Binding InvariantVM.ExecuteStepCommand}"
-                                      Margin="5" Height="30"/>
+                            <StackPanel Margin="10">
+                                <!-- ИСПРАВЛЕНО: экранирование фигурных скобок и угловых скобок -->
+                                <TextBlock Text="while (isHeating &amp;&amp; !stopRequested)" FontFamily="Consolas" Margin="5"/>
+                                <TextBlock Text="{}{" FontFamily="Consolas" Margin="5,0,5,0"/>
+                                
+                                <TextBlock Text="    else if (temp > target + 2) heater = 0;" FontFamily="Consolas" Margin="20,0,5,0"/>
+                                <TextBlock Text="{}}" FontFamily="Consolas" Margin="5,0,5,0"/>
+                                <Button Content="Шаг цикла" Margin="5" Height="30" Click="ExecuteStep_Click"/>
                             </StackPanel>
                         </GroupBox>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="10">
                         <GroupBox Header="Инвариант">
-                            <TextBox Text="{Binding InvariantVM.Invariant}" 
-                                   IsReadOnly="True" Height="60" Margin="5"/>
+                            <StackPanel Margin="5">
+                                <TextBox Text="{Binding InvariantVM.Invariant}" IsReadOnly="True" Height="60"/>
+                            </StackPanel>
                         </GroupBox>
 
                         <GroupBox Header="Вариант-функция">
-                            <TextBlock Text="{Binding InvariantVM.VariantFunction}" Margin="5"/>
-                            <ProgressBar Value="{Binding InvariantVM.VariantValue}" 
-                                       Maximum="100" Height="20" Margin="5"/>
-                            <TextBlock Text="{Binding InvariantVM.VariantValue, StringFormat='Текущее значение: {0}'}" 
-                                     Margin="5"/>
-                        </GroupBox>
-
-                        <GroupBox Header="Проверка сохранения">
-                            <TextBlock Text="{Binding InvariantVM.WPFormula}" Margin="5"/>
-                            <StackPanel Orientation="Horizontal">
-                                <Border Style="{StaticResource IndicatorStyle}"
-                                      Background="{Binding InvariantVM.InvariantBefore, 
-                                      Converter={StaticResource BoolToColorConverter}}">
-                                    <TextBlock Text="До шага" Margin="5"/>
-                                </Border>
-                                <Border Style="{StaticResource IndicatorStyle}"
-                                      Background="{Binding InvariantVM.InvariantAfter, 
-                                      Converter={StaticResource BoolToColorConverter}}">
-                                    <TextBlock Text="После шага" Margin="5"/>
-                                </Border>
+                            <StackPanel Margin="5">
+                                <TextBlock Text="{Binding InvariantVM.VariantFunction}" Margin="5"/>
+                                <ProgressBar Value="{Binding InvariantVM.VariantValue}" Maximum="100" Height="20" Margin="5"/>
+                                <TextBlock Text="{Binding InvariantVM.VariantValue, StringFormat='Текущее значение: {0}'}" Margin="5"/>
                             </StackPanel>
                         </GroupBox>
                     </StackPanel>
                 </Grid>
             </TabItem>
 
-            <!-- Вкладка 5: Булевы функции (ЛР4) -->
-            <TabItem Header="Булевы функции (ЛР4)">
+            <!-- Вкладка 5: Булевы функции -->
+            <TabItem Header="Булевы функции">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -218,8 +175,8 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
-                        <ComboBox ItemsSource="{Binding BooleanVM.LogicPresets}" Width="150" Margin="5"/>
-                        <Button Content="Логика нагрева" Margin="5"/>
+                        <ComboBox x:Name="LogicPresetsComboBox" ItemsSource="{Binding BooleanVM.LogicPresets}" 
+                                 Width="200" Margin="5"/>
                     </StackPanel>
 
                     <Grid Grid.Row="1">
@@ -230,32 +187,32 @@
 
                         <StackPanel Grid.Column="0" Margin="5">
                             <GroupBox Header="Булево выражение">
-                                <TextBox Text="{Binding BooleanVM.BooleanExpression}" 
-                                       Height="60" Margin="5"/>
+                                <StackPanel Margin="5">
+                                    <TextBox Text="{Binding BooleanVM.BooleanExpression}" Height="60"/>
+                                </StackPanel>
                             </GroupBox>
-                            <Button Content="Построить таблицу" 
-                                  Command="{Binding BooleanVM.CalculateTruthTableCommand}"
-                                  Margin="5" Height="30"/>
-                            <Button Content="Сгенерировать DNF/KNF" 
-                                  Command="{Binding BooleanVM.GenerateDNFKNFCommand}"
-                                  Margin="5" Height="30"/>
+                            <Button Content="Проверить эквивалентность" Margin="5" Height="30" Click="CheckEquivalence_Click"/>
+                            <Button Content="Построить таблицу" Margin="5" Height="30" Click="CalculateTruthTable_Click"/>
+                            <Button Content="Сгенерировать DNF/KNF" Margin="5" Height="30" Click="GenerateDNFKNF_Click"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Margin="5">
                             <GroupBox Header="Таблица истинности">
-                                <TextBox Text="{Binding BooleanVM.TruthTable}" 
-                                       IsReadOnly="True" Height="150" Margin="5"
-                                       FontFamily="Consolas"/>
+                                <StackPanel Margin="5">
+                                    <TextBox Text="{Binding BooleanVM.TruthTable}" IsReadOnly="True" Height="150" FontFamily="Consolas"/>
+                                </StackPanel>
                             </GroupBox>
+
                             <GroupBox Header="DNF">
-                                <TextBox Text="{Binding BooleanVM.DNF}" 
-                                       IsReadOnly="True" Height="80" Margin="5"
-                                       FontFamily="Consolas"/>
+                                <StackPanel Margin="5">
+                                    <TextBox Text="{Binding BooleanVM.DNF}" IsReadOnly="True" Height="80" FontFamily="Consolas"/>
+                                </StackPanel>
                             </GroupBox>
+
                             <GroupBox Header="KNF">
-                                <TextBox Text="{Binding BooleanVM.KNF}" 
-                                       IsReadOnly="True" Height="80" Margin="5"
-                                       FontFamily="Consolas"/>
+                                <StackPanel Margin="5">
+                                    <TextBox Text="{Binding BooleanVM.KNF}" IsReadOnly="True" Height="80" FontFamily="Consolas"/>
+                                </StackPanel>
                             </GroupBox>
                         </StackPanel>
                     </Grid>

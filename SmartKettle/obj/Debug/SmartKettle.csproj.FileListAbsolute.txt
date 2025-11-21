@@ -3,3 +3,17 @@ C:\Users\qwertovv\Source\Repos\SmartKettle\SmartKettle\obj\Debug\App.g.cs
 C:\Users\qwertovv\Source\Repos\SmartKettle\SmartKettle\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\qwertovv\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle_MarkupCompile.cache
 C:\Users\qwertovv\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle_MarkupCompile.lref
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle.csproj.AssemblyReference.cache
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\App.g.cs
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle_MarkupCompile.cache
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\MainWindow.baml
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\MainWindow.g.cs
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle.exe
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle.pdb
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\bin\Debug\SmartKettle.exe.config
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\bin\Debug\SmartKettle.exe
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\bin\Debug\SmartKettle.pdb
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle.g.resources
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle.Properties.Resources.resources
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle.csproj.GenerateResource.cache
+C:\Users\delov\Source\Repos\SmartKettle\SmartKettle\obj\Debug\SmartKettle.csproj.CoreCompileInputs.cache
